@@ -1,0 +1,51 @@
+<?php
+$newrecord='';
+If(isset($_POST['submitted'])){
+	
+	include('mysql.php');
+	$number=$_POST['searchbar.value'];
+	$sqlinsert="INSERT INTO phonenumber(phonenumberid) VALUES('$number')";
+	
+	if(!mysqli_query($dbcon,$sqlinsert)){
+		die('error inserting new record');
+	}//end of my nested if statement
+	$newrecord="1 record added to the database";
+	
+	
+	
+	
+}// end of the main if statement
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="WHODAT.css">
+	<title>WhoDat!</title>
+	<meta charset=UTF-8>
+</head>
+<body>
+	<form class="searchbox" name="searchbox" onsubmit="return phvalidate(document.searchbox.searchbar)"method="GET" action="mysql.php">
+		<div id="WHODAT">WHODAT</div>
+		<ul>
+			<li><input type="tel" class="textinput" name="searchbar" id="searchbar" placeholder="Enter Number"></li>
+			<li><input type="submit" class="searchbutton" value="search"></submit></li>
+			<li><div id="textToAppend"></li>
+		</ul>
+		</div>
+	</form><!-- end of searchbox form-->
+
+	<div class="footer">
+		<ul>
+			<li><a href="#">TOC</a></li>
+			<li><a href="#">Support</a></li>
+			<li><a href="#">Privacy</a></li>
+		</ul>
+	</div><!--end footer-->
+	<script src="phvalidate.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script><!--jquery library-->
+	<?php
+	echo $newrecord;
+	?>
+</body>
+</html>

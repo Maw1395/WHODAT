@@ -1,0 +1,17 @@
+refrence ID (foreign key)
+create a comment table that holds all of the phoneNumberIds
+
+comment_table
+phonenumber_id_for_comment_table varchar 10,
+comment varchar 200,
+date timestamp,
+Foreign Key(phonenumber_id_for_comment_table) Refrences phonenumber (phonenumber_id//reffering to the phonenumber_id of the phone number table)
+
+select comment from Comment_table WHERE phonenumbr_id_for_comment_table= $number_input
+mysqli_query
+
+$session will store the variable as global
+
+django coupled with python (coding)
+
+Go To template.php -> populate the page with the inform -> if not the don't do it and give basic form -> on refresh run
